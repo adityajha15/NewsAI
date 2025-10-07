@@ -35,7 +35,6 @@ UserAccount user=userRepo.findById(email).orElse(null);
 //        String credibility = chatModel.call(credibilityPrompt); 
         
 //        Client client = Client.builder().apiKey("YOUR-KEY").build();
-        Client client = Client.builder().apiKey("AIzaSyC-9nGKekPBAmiAy5vY3Y8UZ_rp28zszJY").build();
 
         String summary = client.models.generateContent("gemini-2.5-flash",summaryPrompt,null).text();
         String credibility = client.models.generateContent("gemini-2.5-flash",credibilityPrompt,null).text();
@@ -74,3 +73,4 @@ UserAccount user=userRepo.findById(email).orElse(null);
 		newsRepo.deleteById(id);
 	}
 }
+
